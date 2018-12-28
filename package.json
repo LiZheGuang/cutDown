@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "imageinfo": "^1.0.4",
+    "images": "^3.0.1",
+    "inquirer": "^6.2.1",
+    "qiniu": "^7.2.1",
+    "tinify": "^1.6.0-beta.2"
+  },
+  "name": "cutDown",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "c": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
