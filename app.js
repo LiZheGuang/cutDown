@@ -16,15 +16,12 @@ inquirer.prompt([
         }
     }
   ]).then((answers) => {
-
-    console.log(answers)
     if(answers.fruit === '压缩图片并添加版本号'){
         inquirerVal()
     }else{
         uploading()
     }
   })
-
 function inquirerVal(){
     inquirer.prompt([
         {
