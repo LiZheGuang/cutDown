@@ -1,4 +1,3 @@
-const images = require('images')
 const path = require('path')
 const fs = require('fs')
 const tinify = require('tinify')
