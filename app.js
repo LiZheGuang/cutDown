@@ -1,6 +1,7 @@
 const inquirer = require('inquirer')
 const quality = require('./util/quality')
 const uploading = require('./util/uploading')
+
 // 
 inquirer.prompt([
     {
@@ -15,30 +16,29 @@ inquirer.prompt([
             return val.toLowerCase();
         }
     }
-  ]).then((answers) => {
-    if(answers.fruit === '压缩图片并添加版本号'){
+]).then((answers) => {
+    if (answers.fruit === '压缩图片并添加版本号') {
         console.log('因为要请求tinify的接口来进行压缩，可能会存在网络环境慢的问题')
         inquirerVal()
-    }else{
+    } else {
         uploading()
     }
-  })
-function inquirerVal(){
+})
+function inquirerVal() {
     inquirer.prompt([
         {
             type: 'input',
             message: '请输入版本号:',
-            name:"version",
-            filter(val){
-                    return val
+            name: "version",
+            filter(val) {
+                return val
             }
-          
+
         }
-      ]).then((answers) => {
+    ]).then((answers) => {
         // console.log('结果为:')
-        let  version = answers.version
+        let version = answers.version
         quality(version)
         // console.log(answers)
-      })
+    })
 }
-  
