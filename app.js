@@ -17,6 +17,7 @@ inquirer.prompt([
     }
   ]).then((answers) => {
     if(answers.fruit === '压缩图片并添加版本号'){
+        console.log('因为要请求tinify的接口来进行压缩，可能会存在网络环境慢的问题')
         inquirerVal()
     }else{
         uploading()
@@ -34,10 +35,10 @@ function inquirerVal(){
           
         }
       ]).then((answers) => {
-        console.log('结果为:')
+        // console.log('结果为:')
         let  version = answers.version
         quality(version)
-        console.log(answers)
+        // console.log(answers)
       })
 }
   
