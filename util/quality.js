@@ -44,9 +44,11 @@ class component {
     }
     imagesQuality(pathName, keyVersion, length) {
         const source = tinify.fromFile(imagePath + pathName);
-        source.toFile(condense + (keyVersion + pathName)).then((err, res) => {
+        let timeFils = new Date().getTime()
+        let toFileName = condense + (keyVersion + timeFils + pathName )
+        source.toFile(toFileName).then((err, res) => {
             imageNumber++
-            const newStatRes = fs.statSync(condense + (keyVersion + pathName))
+            const newStatRes = fs.statSync(toFileName)
             const outStatRes = fs.statSync(imagePath + (pathName))
             let newKb = Math.ceil(newStatRes.size / 1024)
             let outKb = Math.ceil(outStatRes.size / 1024)
@@ -91,7 +93,7 @@ class component {
                     "不上传图片",
                     "继续上传图片至七牛"
                 ],
-                filter: function (val) { // 使用filter将回答变为小写
+                filter(val) { // 使用filter将回答变为小写
                     return val.toLowerCase();
                 }
             }
